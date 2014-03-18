@@ -1,0 +1,15 @@
+/* Add here all your CSS customizations */
+.hiddenlinks, .hiddenaddress, .hiddenaddressexp, .hiddenrib, .hiddenrib2, .hiddenrib3{
+    display:none;
+    font-weight: normal;
+}
+.cursor-pointer{
+    cursor: pointer;
+}
+.uppercase{
+    text-transform: uppercase;
+}
+.wbkg{
+    border: 1px #ddd solid;
+    box-shadow: 1px 1px 12px #555;
+}

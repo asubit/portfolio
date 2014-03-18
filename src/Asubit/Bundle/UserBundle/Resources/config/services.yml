@@ -1,0 +1,7 @@
+parameters:
+#    asubit_user.example.class: Asubit\Bundle\UserBundle\Example
+
+services:
+#    asubit_user.example:
+#        class: %asubit_user.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

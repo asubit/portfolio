@@ -1,0 +1,7 @@
+parameters:
+#    asubit_portfolio.example.class: Asubit\Bundle\PortfolioBundle\Example
+
+services:
+#    asubit_portfolio.example:
+#        class: %asubit_portfolio.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

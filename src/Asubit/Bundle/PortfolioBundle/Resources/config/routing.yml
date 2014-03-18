@@ -1,0 +1,3 @@
+asubit_portfolio_homepage:
+    pattern:  /
+    defaults: { _controller: AsubitPortfolioBundle:Default:index }

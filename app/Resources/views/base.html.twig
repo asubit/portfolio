@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<!--[if IE 8]>      <html class="ie ie8"> <![endif]-->
+<!--[if IE 9]>      <html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->  <html> <!--<![endif]-->
+  <head>
+
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <title>{% block title %}E-steam - Cigarettes électroniques rechargeables et cigarettes électroniques jetables{% endblock %}</title>
+    <meta name="keywords" content="Cigarettes électroniques rechargeables jetables eliquides" />
+    <meta name="description" content="E-Steam, grossiste de cigarettes électroniques et e-liquides pour cigarette electronique.">
+    <meta name="author" content="BNPSI">
+    <link rel="icon" type="image/x-icon" href="{{ asset('themes/porto/favicon.ico') }}" />
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Web Fonts  -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css">
+
+    {% block stylesheets %}
+    <!-- Libs CSS -->
+    <link rel="stylesheet" href="{{ asset('themes/porto/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('themes/porto/css/fonts/font-awesome/css/font-awesome.css') }}">
+    <link rel="stylesheet" href="{{ asset('themes/porto/vendor/owl-carousel/owl.carousel.css') }}" media="screen">
+    <link rel="stylesheet" href="{{ asset('themes/porto/vendor/owl-carousel/owl.theme.css') }}" media="screen">
+    <link rel="stylesheet" href="{{ asset('themes/porto/vendor/magnific-popup/magnific-popup.css') }}" media="screen">
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="{{ asset('themes/porto/css/theme.css') }}">
+    <link rel="stylesheet" href="{{ asset('themes/porto/css/theme-elements.css') }}">
+    <link rel="stylesheet" href="{{ asset('themes/porto/css/theme-animate.css') }}">
+
+    <!-- Current Page Styles INDEX -->
+    <link rel="stylesheet" href="{{ asset('themes/porto/vendor/rs-plugin/css/settings.css') }}" media="screen">
+    <link rel="stylesheet" href="{{ asset('themes/porto/vendor/circle-flip-slideshow/css/component.css') }}" media="screen">
+
+
+    <!-- Skin CSS -->
+    <link rel="stylesheet" href="{{ asset('themes/porto/css/skins/beige.css') }}">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ asset('themes/porto/css/custom.css') }}">
+
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="{{ asset('themes/porto/css/theme-responsive.css') }}" />
+    {% endblock %}
+    {% block themeshop %}
+    <!-- Current Page Styles SHOP FULL WIDTH -->
+  <link rel="stylesheet" href="{{ asset('themes/porto/css/theme-shop.css') }}">
+  <link rel="stylesheet" href="{{ asset('themes/porto/css/theme-blog.css') }}" />
+  {% endblock %}
+
+    <!-- Head Libs -->
+    <script src="{{ asset('themes/porto/vendor/modernizr.js') }}"></script>
+
+    <!--[if IE]>
+      <link rel="stylesheet" href="{{ asset('themes/porto/css/ie.css') }}">
+    <![endif]-->
+
+    <!--[if lte IE 8]>
+      <script src="{{ asset('themes/porto/vendor/respond.js') }}"></script>
+    <![endif]-->
+    {# Routes du Front-Office #}
+    {% set frontoffice = ['index', 'panier_validation', 'panier_new_commande', 'panier_create', 'contact_new', 'contact_show', 'panier', 'produit_show', 'categorie_show', 'souscategorie_show'] %}
+
+    {# Routes du Back-Office #}
+    {% set backoffice = ['prix', 'commande', 'commande_show', 'prix_new', 'prix_show', 'prix_edit', 'categorie', 'souscategorie', 'commande_edit', 'produit_new', 'commande_new', 'produit', 'categorie_new', 'souscategorie_new', 'souscategorie_edit', 'newsletters', 'contact', 'image', 'image_upload', 'image_new', 'image_edit', 'image_show', 'rib', 'rib_new', 'rib_show', 'rib_edit', 'parametres', 'parametres_edit', 'parametres_show', 'compte_pro_attente'] %}
+  </head>
+  <body>
+    <div class="body">
+      <header>
+        <div class="container">
+          <h1 class="logo">
+            <a href="#"><img src="{{ asset('img/logo-footer.png') }}" alt="E-Steam : Cigarettes électroniques rechargeables et jetables" title="" /></a>
+          </h1>
+          <div class="search">
+            <form id="searchForm" action="page-search-results.html" method="get">
+              <div class="input-group">
+                <input type="text" class="form-control search" name="q" id="q" placeholder="Rechercher...">
+                <span class="input-group-btn">
+                  <button class="btn btn-default" type="button"><i class="icon icon-search"></i></button>
+                </span>
+              </div>
+            </form>
+          </div>
+            <div class="social-icons">
+              <ul class="social-icons">
+                <li class="facebook"><a href="#" target="_blank" title="Facebook">Facebook</a></li>
+                <li class="twitter"><a href="#" target="_blank" title="Twitter">Twitter</a></li>
+                <li class="googleplus"><a href="#" target="_blank" title="Google +">Google +</a></li>
+              </ul>
+            </div>
+          <nav>
+            <ul class="nav nav-pills nav-top">
+              <li>
+                {% if is_granted('ROLE_USER') %}<a href="#">
+                {% else %}<a href="{{ path('fos_user_security_login') }}">
+                {% endif %}
+                  <i class="icon icon-angle-right"></i>
+                  {% if is_granted('ROLE_COMMERCE') %}Administration
+                  {% elseif is_granted('IS_AUTHENTICATED_FULLY') %}
+                    {% if app.user.prenom is defined %}{{ app.user.prenom }}{% endif %} {% if app.user.nom is defined %}{{ app.user.nom }}{% endif %}
+                  {% else %}Espace Client
+                  {% endif %}
+                </a>
+              </li>
+              {% if is_granted('ROLE_USER') %}<li><a href="{{ path('fos_user_security_logout') }}"><i class="icon icon-angle-right"></i> Déconnexion</a></li>
+              {% endif %}
+              <li>
+                <a href="#"><i class="icon icon-angle-right"></i>Nous écrire</a>
+              </li>
+              <li class="phone">
+                <span><i class="icon icon-phone"></i>+33 (0) 6 20 34 16 04</span>
+              </li>
+            </ul>
+          </nav>
+          <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse">
+            <i class="icon icon-bars"></i>
+          </button>
+        </div>
+        <div class="navbar-collapse nav-main-collapse collapse">
+          <div class="container">
+            <nav class="nav-main mega-menu">
+              <ul class="nav nav-pills nav-main" id="mainMenu">
+                <li class="active">
+                  <a href="#">Accueil</a>
+                </li>
+                <li>
+                  <a href="#">Boutique</a>
+                </li>
+                {% block menucategorie %}{% endblock %}
+                <li class="dropdown mega-menu-item mega-menu-shop">
+                  <a class="dropdown-toggle mobile-redirect" href="#">
+                    <i class="icon icon-shopping-cart"></i> Panier<!-- (1) - 299€ -->
+                    <i class="icon icon-angle-down"></i>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <div class="mega-menu-content">
+                        <div class="row">
+                          <div class="col-md-12">
+
+                            <table cellspacing="0" class="cart">
+                              <tbody>
+                                <!--<tr>
+                                  <td class="product-thumbnail">
+                                    <a href="shop-product-sidebar.html">
+                                      <img width="100" height="100" alt="" class="img-responsive" src="{{ asset('themes/porto/img/products/product-1.jpg') }}">
+                                    </a>
+                                  </td>
+                                  <td class="product-name">
+                                    <a href="shop-product-sidebar.html">Photo Camera<br><span class="amount"><strong>$299</strong></span></a>
+                                  </td>
+                                  <td class="product-actions">
+                                    <a title="Remove this item" class="remove" href="#">
+                                      <i class="icon icon-times"></i>
+                                    </a>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="actions" colspan="3">
+                                      <a href="#" class="btn btn-default">Voir panier</a>
+                                    </td>
+                                    <td class="actions" colspan="3">
+                                      <a href="#" class="btn btn-primary">Passer commande</a>
+                                  </td>
+                                </tr>-->
+                              </tbody>
+                            </table>
+
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
+      <!-- Block BODY -->
+      {% block body %}{% endblock %}
+      <!-- / Block BODY -->
+      <footer id="footer">
+        <div class="container">
+          <div class="row">
+            <div class="footer-ribon">
+              <span>Entrer en contact</span>
+            </div>
+            <div class="col-md-4">
+              <div class="contact-details">
+                <h4><a href="{{ path('fos_user_security_login') }}">Inscrivez-vous</a> !</h4>
+                <p>En créant un compte sur notre boutique, vous pourrez passer vos commandes plus rapidement, enregistrer plusieurs adresses de livraison, consulter et suivre vos commandes, et plein d'autres choses encore.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="contact-details">
+                <h4>Contactez-nous</h4>
+                <ul class="contact">
+                  <li><p><i class="icon icon-map-marker"></i> <strong>Addresse:</strong> Chemin de Rousse, 64110 JURAN&Ccedil;ON, FRANCE</p></li>
+                  <li><p><i class="icon icon-phone"></i> <strong>Téléphone:</strong> +33 (0) 6 20 34 16 04</p></li>
+                  <li><p><i class="icon icon-envelope"></i> <strong>Email:</strong> <a href="mailto:mail@example.com">contact@e-steam.fr</a></p></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <h4>Suivez E-Steam !</h4>
+              <div class="social-icons">
+              <ul class="social-icons">
+                <li class="facebook"><a href="#" target="_blank" title="Facebook">Facebook</a></li>
+                <li class="twitter"><a href="#" target="_blank" title="Twitter">Twitter</a></li>
+                <li class="googleplus"><a href="#" target="_blank" title="Google +">Google +</a></li>
+              </ul>
+            </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-1">
+                <a href="index.html" class="logo">
+                  <img alt="Porto Website Template" class="img-responsive" src="{{ asset('img/logo-footer_blanc.png') }}">
+                </a>
+              </div>
+              <div class="col-md-4">
+                <p>© Copyright 2014. Tous droits réservés.</p>
+              </div>
+              <div class="col-md-7">
+                <nav id="sub-menu">
+                  <ul>
+                    <li><a href="page-faq.html">Questions / réponses</a></li>
+                    <li><a href="page-faq.html">Certificats</a></li>
+                    <li><a href="page-faq.html">Les médias en parlent</a></li>
+                    <li><a href="page-faq.html">Conditions générales de vente</a></li>
+                    <li><a href="page-faq.html">Devenir revendeur</a></li>
+                    <li><a href="page-faq.html">Nos points de vente</a></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Libs -->
+    <script src="{{ asset('themes/porto/vendor/jquery.js') }}"></script>
+    <script src="{{ asset('themes/porto/js/plugins.js') }}"></script>
+    <script src="{{ asset('themes/porto/vendor/jquery.easing.js') }}"></script>
+    <script src="{{ asset('themes/porto/vendor/jquery.appear.js') }}"></script>
+    <script src="{{ asset('themes/porto/vendor/jquery.cookie.js') }}"></script>
+
+    <script src="{{ asset('themes/porto/vendor/bootstrap.js') }}"></script>
+    <script src="{{ asset('themes/porto/vendor/twitterjs/twitter.js') }}"></script>
+    <script src="{{ asset('themes/porto/vendor/rs-plugin/js/jquery.themepunch.plugins.min.js') }}"></script>
+    <script src="{{ asset('themes/porto/vendor/rs-plugin/js/jquery.themepunch.revolution.js') }}"></script>
+    <script src="{{ asset('themes/porto/vendor/owl-carousel/owl.carousel.js') }}"></script>
+    <script src="{{ asset('themes/porto/vendor/circle-flip-slideshow/js/jquery.flipshow.js') }}"></script>
+    <script src="{{ asset('themes/porto/vendor/magnific-popup/magnific-popup.js') }}"></script>
+    <script src="{{ asset('themes/porto/vendor/jquery.validate.js') }}"></script>
+
+    <!-- Current Page Scripts -->
+    <script src="{{ asset('themes/porto/js/views/view.home.js') }}"></script>
+
+    <!-- Theme Initializer -->
+    <script src="{{ asset('themes/porto/js/theme.js') }}"></script>
+
+    <!-- Custom JS -->
+    <script src="{{ asset('themes/porto/js/custom.js') }}"></script>
+
+    <!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information.
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-12345678-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+     -->
+
+  </body>
+</html>
