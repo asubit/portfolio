@@ -1,0 +1,22 @@
+#text-noir{
+    color: black
+}
+.text-noir{
+    color: black
+}
+.lead .text-noir{
+	color: black
+}
+h1 .text-noir{
+color: black;
+}
+.carousel-caption h1 .text-noir{
+color: black !important;
+}
+
+#noirbordel{
+color: black;
+}
+.some-space{
+	height: 100px;
+}

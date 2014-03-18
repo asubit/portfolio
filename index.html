@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>Antoine Subit &middot; Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Antoine Subit">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+    <LINK rel="shortcut icon" href="images/favicon.ico">
+
+    <!-- Le styles -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <style>
+
+    /* GLOBAL STYLES
+    -------------------------------------------------- */
+    /* Padding below the footer and lighter body text */
+
+    body {
+      padding-bottom: 40px;
+      color: #5a5a5a;
+    }
+
+
+
+    /* CUSTOMIZE THE NAVBAR
+    -------------------------------------------------- */
+
+    /* Special class on .container surrounding .navbar, used for positioning it into place. */
+    .navbar-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      margin-top: 20px;
+      margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
+    }
+    .navbar-wrapper .navbar {
+
+    }
+
+    /* Remove border and change up box shadow for more contrast */
+    .navbar .navbar-inner {
+      border: 0;
+      -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+         -moz-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+              box-shadow: 0 2px 10px rgba(0,0,0,.25);
+    }
+
+    /* Downsize the brand/project name a bit */
+    .navbar .brand {
+      padding: 14px 20px 16px; /* Increase vertical padding to match navbar links */
+      font-size: 16px;
+      font-weight: bold;
+      text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+    }
+
+    /* Navbar links: increase padding for taller navbar */
+    .navbar .nav > li > a {
+      padding: 15px 20px;
+    }
+
+    /* Offset the responsive button for proper vertical alignment */
+    .navbar .btn-navbar {
+      margin-top: 10px;
+    }
+
+
+
+    /* CUSTOMIZE THE CAROUSEL
+    -------------------------------------------------- */
+
+    /* Carousel base class */
+    .carousel {
+      margin-bottom: 60px;
+    }
+
+    .carousel .container {
+      position: relative;
+      z-index: 9;
+    }
+
+    .carousel-control {
+      height: 80px;
+      margin-top: 0;
+      font-size: 120px;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+      background-color: transparent;
+      border: 0;
+      z-index: 10;
+    }
+
+    .carousel .item {
+      height: 500px;
+    }
+    .carousel img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      height: 500px;
+    }
+
+    .carousel-caption {
+      background-color: transparent;
+      position: static;
+      max-width: 550px;
+      padding: 0 20px;
+      margin-top: 200px;
+    }
+    .carousel-caption h1,
+    .carousel-caption .lead {
+      margin: 0;
+      line-height: 1.25;
+      color: #fff;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+    }
+    .carousel-caption .btn {
+      margin-top: 10px;
+    }
+
+
+
+    /* MARKETING CONTENT
+    -------------------------------------------------- */
+
+    /* Center align the text within the three columns below the carousel */
+    .marketing .span4 {
+      text-align: center;
+    }
+    .marketing h2 {
+      font-weight: normal;
+    }
+    .marketing .span4 p {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+
+    /* Featurettes
+    ------------------------- */
+
+    .featurette-divider {
+      margin: 80px 0; /* Space out the Bootstrap <hr> more */
+    }
+    .featurette {
+      padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
+      overflow: hidden; /* Vertically center images part 2: clear their floats. */
+    }
+    .featurette-image {
+      margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+    }
+
+    /* Give some space on the sides of the floated elements so text doesn't run right into it. */
+    .featurette-image.pull-left {
+      margin-right: 40px;
+    }
+    .featurette-image.pull-right {
+      margin-left: 40px;
+    }
+
+    /* Thin out the marketing headings */
+    .featurette-heading {
+      font-size: 50px;
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+
+
+
+    /* RESPONSIVE CSS
+    -------------------------------------------------- */
+
+    @media (max-width: 979px) {
+
+      .container.navbar-wrapper {
+        margin-bottom: 0;
+        width: auto;
+      }
+      .navbar-inner {
+        border-radius: 0;
+        margin: -20px 0;
+      }
+
+      .carousel .item {
+        height: 500px;
+      }
+      .carousel img {
+        width: auto;
+        height: 500px;
+      }
+
+      .featurette {
+        height: auto;
+        padding: 0;
+      }
+      .featurette-image.pull-left,
+      .featurette-image.pull-right {
+        display: block;
+        float: none;
+        max-width: 40%;
+        margin: 0 auto 20px;
+      }
+    }
+
+
+    @media (max-width: 767px) {
+
+      .navbar-inner {
+        margin: -20px;
+      }
+
+      .carousel {
+        margin-left: -20px;
+        margin-right: -20px;
+      }
+      .carousel .container {
+
+      }
+      .carousel .item {
+        height: 300px;
+      }
+      .carousel img {
+        height: 300px;
+      }
+      .carousel-caption {
+        width: 65%;
+        padding: 0 70px;
+        margin-top: 100px;
+      }
+      .carousel-caption h1 {
+        font-size: 30px;
+      }
+      .carousel-caption .lead,
+      .carousel-caption .btn {
+        font-size: 18px;
+      }
+
+      .marketing .span4 + .span4 {
+        margin-top: 40px;
+      }
+
+      .featurette-heading {
+        font-size: 30px;
+      }
+      .featurette .lead {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+
+    }
+    </style>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="bootstrap/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="bootstrap/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="bootstrap/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="bootstrap/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="bootstrap/ico/favicon.png">
+  </head>
+
+  <body>
+
+
+
+    <!-- NAVBAR
+    ================================================== -->
+    <div class="navbar-wrapper">
+      <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
+      <div class="container">
+
+        <div class="navbar navbar-inverse">
+          <div class="navbar-inner">
+            <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="http://www.subit.fr/antoine">Antoine Subit</a>
+            <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+            <div class="nav-collapse collapse">
+              <ul class="nav">
+                <li class="active"><a href="#home"><i class="icon-home icon-white"></i> Accueil</a></li>
+                <li><a href="about.html"><i class="icon-info-sign icon-white"></i> A propos</a></li>
+                <li><a href="contact.html"><i class="icon-envelope icon-white"></i> Contact</a></li>
+                <!-- Read about Bootstrap dropdowns at http://twitter.github.com/bootstrap/javascript.html#dropdowns -->
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-th icon-white"></i> Portfolio <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="symfony.html">Développement d'applications spécifiques</a></li>
+                    <li><a href="wordpress.html">Création de sites web & Graphisme</a></li>
+                    <li><a href="print-pao.html">Print & PAO</a></li>
+                    <li class="divider"></li>
+                    <li class="nav-header">Anciennes Versions</li>
+                    <li><a href="#">v 1.0</a></li>
+                    <li><a href="#">v 1.1</a></li>
+                    <li><a href="#">v 1.2</a></li>
+                    <li><a href="#">v 2.0</a></li>
+                    <li><a href="#">v 2.1</a></li>
+                  </ul>
+                </li>
+                <li><a href="http://www.webcreateur.net" target="_blank"><i class="icon-comment icon-white"></i> Blog</a></li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div><!-- /.navbar-inner -->
+        </div><!-- /.navbar -->
+
+      </div> <!-- /.container -->
+    </div><!-- /.navbar-wrapper -->
+
+
+
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="images/01.jpg" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1 id="text-noir">Une passion.</h1>
+              <p class="lead" id="text-noir">Pour moi le développement d'application web spécifique est une passion. J'ai à coeur de travailler jour après jour sur des projets innovants, unique et adapté au besoins du client.</p>
+              <a class="btn btn-large btn-primary" href="http://symfony.com/fr/doc/current/cookbook/controller/service.html">Ma passion du moment</a>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="images/02.jpg" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1 id="text-noir">Une envie.</h1>
+              <p class="lead" id="text-noir">Ce n'est pas par nécessité que je me tiens à jour des futurs standards du web ou des prochaines versions à venir mais parce que j'ai envie d'être courant des dernières nouveautés.</p>
+              <a class="btn btn-large btn-primary" href="https://drupal.org/community-initiatives/drupal-core">Mon envie du moment</a>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="images/opensource.PNG" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1 id="text-noir">L'Open Source, un état d'esprit.</h1>
+              <p class="lead" id="text-noir">L'Open Source et le monde du Libre sont les endroits clés où l'on rencontre des gens pationnés et investis, même à titre personnel dans cette démarche. L'envie et la volonté de contribuer pour un web différent.</p>
+              <a class="btn btn-large btn-primary" href="http://opensource.org">En savoir plus ...</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+    </div><!-- /.carousel -->
+
+
+
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing">
+
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="span4">
+          <img class="img-circle" data-src="holder.js/140x140">
+          <h2>Simplicité</h2>
+          <p>
+            « L'art de la simplicité est un casse-tête de la complexité. » <i>Doug Horton</i><br />
+            Allez au plus simple est essentiel pour dégager des fonctionalités performantes.
+          </p>
+          <p><a data-placement="bottom" data-title="Web design minimaliste" data-content="Directement né d’un contexte technique et commercial renouvelé, il se décline aujourd’hui à l’infini. Une tendance appréciable et intéressante à explorer." class="btn detail">Voir détails &raquo;</a></p>
+        </div><!-- /.span4 -->
+        <div class="span4">
+          <img class="img-circle" data-src="holder.js/140x140">
+          <h2>Performance</h2>
+          <p>
+            « Mon point fort, si j’en ai un, c’est la performance. J’en fais toujours plus que ce que je dis. Je produis toujours plus que ce que je promets. » <i>Richard Nixon</i><br />
+            Utiliser des outils puissants pour réaliser des programmes perfomants de qualité professionnel.
+          </p>
+          <p><a data-placement="bottom" data-title="La puissance de l'open-source" data-content="Sublime Text, Chromium, XAMPP, BootStrap, Drupal, Wordpress, Prestashop et bien d'autres... Tant d'outils puissants et libres à notre disposition, utilisons-les !" class="btn detail">Voir détails &raquo;</a></p>
+        </div><!-- /.span4 -->
+        <div class="span4">
+          <img class="img-circle" data-src="holder.js/140x140">
+          <h2>Professionnalisme</h2>
+          <p>
+            « Le professionnalisme est une maladie qui vient aux gens par leur métier, par la maîtrise qu’ils en ont, qui les asservit. » <i>Christian Bobin</i><br />
+            Associer les connaissances techniques aux bonnes pratiques du web permet de réaliser des projets aboutis et pérennes.
+          </p>
+          <p><a data-placement="bottom" class="btn detail" data-title="Les bonnes pratiques du web" data-content="Validation W3C, identation et commentation du code, compatibilité mmulti-navigateurs, ... Tel est la clé d'un projet">Voir détails &raquo;</a></p>
+        </div><!-- /.span4 -->
+      </div><!-- /.row -->
+
+
+      <!-- START THE FEATURETTES -->
+
+      <hr class="featurette-divider">
+
+      <div class="featurette">
+        <img class="featurette-image pull-right" src="images/symfony-icon.png">
+        <h2 class="featurette-heading">L'avenir : Symfony 2. <span class="muted">Un framework PHP puissant !</span></h2>
+        <p class="lead">« High Performance PHP Framework for Web Development ». Aujourd'hui utilisé par <i>Drupal 8</i>, <i>Joomla</i>, <i>Yahoo! Bookmark</i> et bien d'autres c'est le framework montant qui détrône petit à petit le framework <i>Zend</i>. Extrement puissant pour développer tout type d'applications.</p>
+        ► <a href="symfony.html">Voir mes créations sous Symfony</a>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="featurette">
+        <img class="featurette-image pull-left" src="images/drupal-icon.jpg">
+        <h2 class="featurette-heading">Drupal ! <span class="muted">Le CMS le plus puissant du marché.</span></h2>
+        <p class="lead">Bientôt dans sa version 8 Drupal est de loin le plus avancé des CMS, pensé par des développeurs pour des développeurs comment ne pas craquer sous son charme ?</p>
+        ► <a href="drupal.html">Voir mes créations sous Drupal</a>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="featurette">
+        <img class="featurette-image pull-right" src="images/wordpress-icon.png">
+        <h2 class="featurette-heading">Vous avez dis Wordpress ? <span class="muted">Tellement plus qu'un blog...</h2>
+        <p class="lead">C'est le CMS le plus populaire et le plus utilisé. Très léger et très modulable, parfait pour créer des sites originaux administrables simplement.</p>
+        ► <a href="wordpress.html">Voir mes créations sous Wordpress</a>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <!-- /END THE FEATURETTES -->
+
+
+      <!-- FOOTER -->
+      <footer>
+        <p class="pull-right"><a href="#"><i class="icon-arrow-up"></i> Haut de page</a></p>
+        <p>&copy; 2013 Antoine Subit. &middot; <a href="contact.html">Contact</a> &middot; <a href="mentions-legales.html">Mentions légales</a></p>
+      </footer>
+
+    </div><!-- /.container -->
+
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="bootstrap/js/jquery.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="bootstrap/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="bootstrap/js/bootstrap-popover.js"></script>
+    <script>
+      !function ($) {
+        $(function(){
+          // carousel demo
+          $('#myCarousel').carousel()
+        })
+      }(window.jQuery)
+
+      !function ($) {
+        $(function(){
+          // carousel demo
+          $('.detail').popover()
+        })
+      }(window.jQuery)
+    </script>
+    <script src="bootstrap/js/holder/holder.js"></script>
+  </body>
+</html>
