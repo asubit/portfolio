@@ -75,6 +75,34 @@ class Work
      */
     protected $category;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tool", type="string", length=255, nullable=true)
+     */
+    private $tool;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="client", type="string", length=255, nullable=true)
+     */
+    private $client;
+
+    /**
+     * @var array
+     *
+     * @ORM\Column(name="tags", type="simple_array", nullable=true)
+     */
+    private $tags;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="linkpreview", type="string", length=255, nullable=true)
+     */
+    private $linkpreview;
+
 
     /**
      * Get id
@@ -202,6 +230,29 @@ class Work
     }
 
     /**
+     * Set tags
+     *
+     * @param array $tags
+     * @return Work
+     */
+    public function setTags($tags)
+    {
+        $this->tags = $tags;
+
+        return $this;
+    }
+
+    /**
+     * Get tags
+     *
+     * @return array 
+     */
+    public function getTags()
+    {
+        return $this->tags;
+    }
+
+    /**
      * Set shortDescription
      *
      * @param string $shortDescription
@@ -268,5 +319,74 @@ class Work
     public function getCategory()
     {
         return $this->category;
+    }
+
+    /**
+     * Set tool
+     *
+     * @param string $tool
+     * @return Work
+     */
+    public function setTool($tool)
+    {
+        $this->tool = $tool;
+
+        return $this;
+    }
+
+    /**
+     * Get tool
+     *
+     * @return string 
+     */
+    public function getTool()
+    {
+        return $this->tool;
+    }
+
+    /**
+     * Set client
+     *
+     * @param string $client
+     * @return Work
+     */
+    public function setClient($client)
+    {
+        $this->client = $client;
+
+        return $this;
+    }
+
+    /**
+     * Get client
+     *
+     * @return string 
+     */
+    public function getClient()
+    {
+        return $this->client;
+    }
+
+    /**
+     * Set linkpreview
+     *
+     * @param string $linkpreview
+     * @return Work
+     */
+    public function setLinkpreview($linkpreview)
+    {
+        $this->linkpreview = $linkpreview;
+
+        return $this;
+    }
+
+    /**
+     * Get linkpreview
+     *
+     * @return string 
+     */
+    public function getLinkpreview()
+    {
+        return $this->linkpreview;
     }
 }

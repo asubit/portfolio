@@ -8,6 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Asubit\Bundle\PortfolioBundle\Entity\Work;
+use Asubit\Bundle\PortfolioBundle\Entity\Category;
 use Asubit\Bundle\PortfolioBundle\Form\WorkType;
 
 /**
@@ -30,9 +31,11 @@ class WorkController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('AsubitPortfolioBundle:Work')->findAll();
+        $categories = $em->getRepository('AsubitPortfolioBundle:Category')->findAll();
 
         return array(
             'entities' => $entities,
+            'categories' => $categories,
         );
     }
     /**

@@ -1,53 +1,54 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    <h1>Work list</h1>
+    <div role="main" class="main">
 
-    <table class="records_list">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Namecanonical</th>
-                <th>Thumbnail</th>
-                <th>Datecreation</th>
-                <th>Photos</th>
-                <th>Shortdescription</th>
-                <th>Description</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for entity in entities %}
-            <tr>
-                <td><a href="{{ path('work_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td>{{ entity.name }}</td>
-                <td>{{ entity.nameCanonical }}</td>
-                <td>{{ entity.thumbnail }}</td>
-                <td>{% if entity.dateCreation %}{{ entity.dateCreation|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{{ entity.photos }}</td>
-                <td>{{ entity.shortDescription }}</td>
-                <td>{{ entity.description }}</td>
-                <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('work_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('work_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
+        <section class="page-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul class="breadcrumb">
+                            <li><a href="index.html">Home</a></li>
+                            <li class="active">Portfolio</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>Toutes les projets</h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="sort-source-wrapper">
+            <div class="container">
+                <ul class="nav nav-pills sort-source secundary pull-right" data-sort-id="portfolio" data-option-key="filter">
+                    <li data-option-value="*" class="active"><a href="#">Tous</a></li>
+                    {% for category in categories %}
+                    <li data-option-value=".{{ category.nameCanonical }}"><a href="#">{{ category.name }}</a></li>
+                    {% endfor %}
                 </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+            </div>
+        </div>
+        <ul class="portfolio-list sort-destination full-width" data-sort-id="portfolio">
+            {% for entity in entities %}
+            <li class="isotope-item {{ entity.category.nameCanonical }}">
+                <div class="portfolio-item img-thumbnail">
+                    <a href="{{ path('work_show', { 'id': entity.id }) }}" class="thumb-info secundary">
+                        <img alt="" class="img-responsive" src="{{ asset('images/') }}{{ entity.thumbnail }}">
+                        <span class="thumb-info-title">
+                            <span class="thumb-info-inner">{{ entity.name }}</span>
+                            <span class="thumb-info-type">{{ entity.tool }}</span>
+                        </span>
+                        <span class="thumb-info-action">
+                            <span title="Universal" href="#" class="thumb-info-action-icon"><i class="icon icon-link"></i></span>
+                        </span>
+                    </a>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
 
-        <ul>
-        <li>
-            <a href="{{ path('work_new') }}">
-                Create a new entry
-            </a>
-        </li>
-    </ul>
-    {% endblock %}
+    </div>
+{% endblock %}

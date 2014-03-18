@@ -27,7 +27,7 @@
             </tr>
             <tr>
                 <th>Photos</th>
-                <td>{{ entity.photos }}</td>
+                <td>{% for photo in entity.photos %}<img src="{{ asset('../old') }}/{{ photo }}" />{% endfor %}</td>
             </tr>
             <tr>
                 <th>Shortdescription</th>

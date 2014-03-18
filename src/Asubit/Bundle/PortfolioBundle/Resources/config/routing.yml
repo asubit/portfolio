@@ -1,3 +1,41 @@
-asubit_portfolio_homepage:
+index:
     pattern:  /
     defaults: { _controller: AsubitPortfolioBundle:Default:index }
+aboutme:
+    pattern:  /a-propos
+    defaults: { _controller: AsubitPortfolioBundle:Default:aboutme }
+contact:
+    pattern:  /contact
+    defaults: { _controller: AsubitPortfolioBundle:Default:contact }
+
+work:
+    pattern:  /portfolio
+    defaults: { _controller: AsubitPortfolioBundle:Work:index }
+work_new:
+    pattern:  /portfolio/new
+    defaults: { _controller: AsubitPortfolioBundle:Work:new }
+work_show:
+    pattern:  /portfolio/{id}
+    defaults: { _controller: AsubitPortfolioBundle:Work:show }
+work_delete:
+    pattern:  /portfolio/{id}
+    defaults: { _controller: AsubitPortfolioBundle:Work:delete }
+work_edit:
+    pattern:  /portfolio/{id}/edit
+    defaults: { _controller: AsubitPortfolioBundle:Work:edit }
+
+category:
+    pattern:  /categorie
+    defaults: { _controller: AsubitPortfolioBundle:Category:index }
+category_new:
+    pattern:  /categorie/new
+    defaults: { _controller: AsubitPortfolioBundle:Category:new }
+category_show:
+    pattern:  /categorie/{id}
+    defaults: { _controller: AsubitPortfolioBundle:Category:show }
+category_delete:
+    pattern:  /categorie/{id}
+    defaults: { _controller: AsubitPortfolioBundle:Category:delete }
+category_edit:
+    pattern:  /categorie/{id}/edit
+    defaults: { _controller: AsubitPortfolioBundle:Category:edit }
