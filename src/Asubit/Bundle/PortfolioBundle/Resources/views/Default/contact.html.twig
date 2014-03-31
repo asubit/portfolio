@@ -1,5 +1,107 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-Hello !
+<section class="page-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="breadcrumb">
+                    <li><a href="{{ path('index') }}">Accueil</a></li>
+                    <li class="active">Contact</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Contact</h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Google Maps -->
+<div id="googlemaps" class="google-map hidden-xs">
+    <iframe width="1900" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.fr/maps?f=q&amp;source=s_q&amp;hl=fr&amp;geocode=&amp;q=Lyon+8,+Lyon&amp;aq=0&amp;oq=lyon&amp;sll=45.317723,5.43724&amp;sspn=5.639172,9.876709&amp;ie=UTF8&amp;hq=&amp;hnear=8e+Arrondissement,+Lyon,+Rh%C3%B4ne,+Rh%C3%B4ne-Alpes&amp;ll=45.734822,4.868139&amp;spn=0.043733,0.077162&amp;t=m&amp;z=14&amp;output=embed"></iframe>
+</div>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-6">
+
+                <div class="alert alert-success hidden" id="contactSuccess">
+                    <strong>Success!</strong> Your message has been sent to us.
+                </div>
+
+                <div class="alert alert-danger hidden" id="contactError">
+                    <strong>Error!</strong> There was an error sending your message.
+                </div>
+
+                <h2 class="short"><strong>Contactez</strong> Moi</h2>
+                <form action="php/contact-form.php" id="contactForm" type="post">
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="col-md-6">
+                                <label>Nom *</label>
+                                <input type="text" value="" data-msg-required="Please enter your name." maxlength="100" class="form-control" name="name" id="name">
+                            </div>
+                            <div class="col-md-6">
+                                <label>Email *</label>
+                                <input type="email" value="" data-msg-required="Please enter your email address." data-msg-email="Please enter a valid email address." maxlength="100" class="form-control" name="email" id="email">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <label>Sujet</label>
+                                <input type="text" value="" data-msg-required="Please enter the subject." maxlength="100" class="form-control" name="subject" id="subject">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <label>Message *</label>
+                                <textarea maxlength="5000" data-msg-required="Please enter your message." rows="10" class="form-control" name="message" id="message"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <input type="submit" value="Envoyer" class="btn btn-primary btn-lg" data-loading-text="Loading...">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6">
+
+                <h4 class="push-top">En savoir <strong>plus</strong></h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget leo at velit imperdiet varius. In eu ipsum vitae velit congue iaculis vitae at risus.</p>
+
+                <hr />
+
+                <h4>Mes <strong>Coordonnées</strong></h4>
+                <ul class="list-unstyled">
+                    <li><i class="icon icon-map-marker"></i> <strong>Addresse:</strong> Lyon 8ème, FRANCE</li>
+                    <li><i class="icon icon-phone"></i> <strong>Téléphone:</strong> (+33) 6 75 08 47 08</li>
+                    <li><i class="icon icon-envelope"></i> <strong>Email:</strong> <a href="mailto:antoine@subit.fr">antoine@subit.fr</a></li>
+                </ul>
+
+                <hr />
+
+                <h4>Disponibilité de <strong>réponse</strong></h4>
+                <ul class="list-unstyled">
+                    <li><i class="icon icon-time"></i> Lundi - Vendredi : Mail ou formulaire de contact</li>
+                    <li><i class="icon icon-time"></i> Samedi : Téléphone</li>
+                    <li><i class="icon icon-time"></i> Dimanche : Sieste</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
 {% endblock %}
