@@ -54,36 +54,13 @@
     <body>
 
         <div class="body">
-            <header>
+            <header class="single-menu flat-menu">
                 <div class="container">
                     <h1 class="logo">
-                        <a href="index.html">
+                        <a href="{{ path('index') }}">
                             <img alt="Porto" src="{{ asset('themes/porto/img/logo.png') }}">
                         </a>
                     </h1>
-                    <div class="search">
-                        <form id="searchForm" action="page-search-results.html" method="get">
-                            <div class="input-group">
-                                <input type="text" class="form-control search" name="q" id="q" placeholder="Search...">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button"><i class="icon icon-search"></i></button>
-                                </span>
-                            </div>
-                        </form>
-                    </div>
-                    <nav>
-                        <ul class="nav nav-pills nav-top">
-                            <li>
-                                <a href="about-us.html"><i class="icon icon-angle-right"></i>About Us</a>
-                            </li>
-                            <li>
-                                <a href="contact-us.html"><i class="icon icon-angle-right"></i>Contact Us</a>
-                            </li>
-                            <li class="phone">
-                                <span><i class="icon icon-phone"></i>(123) 456-7890</span>
-                            </li>
-                        </ul>
-                    </nav>
                     <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse">
                         <i class="icon icon-bars"></i>
                     </button>
@@ -116,7 +93,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="center">
-                            <h3>Porto is <strong>everything</strong> you need to create an <strong>awesome</strong> website! <a href="http://themeforest.net/item/porto-responsive-html5-template/4106987" target="_blank" class="btn btn-lg btn-primary" data-appear-animation="bounceIn">Buy Now!</a> <span class="arrow hlb" data-appear-animation="rotateInUpLeft" style="top: -22px;"></span></h3>
+                            <h3>Découvrir mes <strong>créations</strong> et mes <strong>projets</strong> <a href="{{ path('work') }}" class="btn btn-lg btn-primary" data-appear-animation="bounceIn">PORTFOLIO</a> <span class="arrow hlb" data-appear-animation="rotateInUpLeft" style="top: -22px;"></span></h3>
                         </div>
                     </div>
                 </div>
@@ -126,12 +103,12 @@
                 <div class="container">
                     <div class="row">
                         <div class="footer-ribon">
-                            <span>Get in Touch</span>
+                            <span>Entrer en contact</span>
                         </div>
                         <div class="col-md-5">
                             <div class="newsletter">
-                                <h4>Newsletter</h4>
-                                <p>Keep up on our always evolving product features and technology. Enter your e-mail and subscribe to our newsletter.</p>
+                                <h4>Laisser votre mail</h4>
+                                <p>Laisser moi votre adresse e-mail et je vous recontacterais dans les plus bref délais.</p>
 
                                 <div class="alert alert-success hidden" id="newsletterSuccess">
                                     <strong>Success!</strong> You've been added to our email list.
@@ -151,16 +128,16 @@
                         </div>
                         <div class="col-md-4">
                             <div class="contact-details">
-                                <h4>Entrer en contact</h4>
+                                <h4>Mes coordonnées</h4>
                                 <ul class="contact">
                                     <li><p><i class="icon icon-map-marker"></i> <strong>Address:</strong> 18 rue Paul Cazeneuve</p></li>
-                                    <li><p><i class="icon icon-phone"></i> <strong>Phone:</strong> (+33) 6-75-08-47-08</p></li>
+                                    <li><p><i class="icon icon-phone"></i> <strong>Phone:</strong> (+33) 6 75 08 47 08</p></li>
                                     <li><p><i class="icon icon-envelope"></i> <strong>Email:</strong> <a href="mailto:antoine@subit.fr">antoine@subit.fr</a></p></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="col-md-3">
-                            <h4>Suivez_moi</h4>
+                            <h4>Suivez moi</h4>
                             <div class="social-icons">
                                 <ul class="social-icons">
                                     <li class="facebook"><a href="http://www.facebook.com/" target="_blank" title="Facebook">Facebook</a></li>
@@ -178,7 +155,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-1">
-                                <a href="index.html" class="logo">
+                                <a href="{{ path('index') }}" class="logo">
                                     <img alt="Porto Website Template" class="img-responsive" src="{{ asset('themes/porto/img/logo-footer.png') }}">
                                 </a>
                             </div>
@@ -188,8 +165,8 @@
                             <div class="col-md-4">
                                 <nav id="sub-menu">
                                     <ul>
-                                        <li><a href="page-faq.html">FAQ's</a></li>
-                                        <li><a href="sitemap.html">Sitemap</a></li>
+                                        <li><a href="page-faq.html">Mentions légales</a></li>
+                                        <li><a href="sitemap.html">Plan du site</a></li>
                                         <li><a href="contact-us.html">Contact</a></li>
                                     </ul>
                                 </nav>
@@ -206,7 +183,7 @@
         <script src="{{ asset('themes/porto/vendor/jquery.easing.js') }}"></script>
         <script src="{{ asset('themes/porto/vendor/jquery.appear.js') }}"></script>
         <script src="{{ asset('themes/porto/vendor/jquery.cookie.js') }}"></script>
-        
+
         <script src="{{ asset('themes/porto/vendor/bootstrap.js') }}"></script>
         <script src="{{ asset('themes/porto/vendor/twitterjs/twitter.js') }}"></script>
         <script src="{{ asset('themes/porto/vendor/owl-carousel/owl.carousel.js') }}"></script>

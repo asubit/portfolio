@@ -1,56 +1,135 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    <h1>Work</h1>
+<div role="main" class="main">
 
-    <table class="record_properties">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ entity.id }}</td>
-            </tr>
-            <tr>
-                <th>Name</th>
-                <td>{{ entity.name }}</td>
-            </tr>
-            <tr>
-                <th>Namecanonical</th>
-                <td>{{ entity.nameCanonical }}</td>
-            </tr>
-            <tr>
-                <th>Thumbnail</th>
-                <td>{{ entity.thumbnail }}</td>
-            </tr>
-            <tr>
-                <th>Datecreation</th>
-                <td>{{ entity.dateCreation|date('Y-m-d H:i:s') }}</td>
-            </tr>
-            <tr>
-                <th>Photos</th>
-                <td>{% for photo in entity.photos %}<img src="{{ asset('../old') }}/{{ photo }}" />{% endfor %}</td>
-            </tr>
-            <tr>
-                <th>Shortdescription</th>
-                <td>{{ entity.shortDescription }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ entity.description }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <section class="page-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="breadcrumb">
+                        <li><a href="{{ path('index') }}">Home</a></li>
+                        <li><a href="{{ path('work') }}">Portfolio</a></li>
+                        <li class="active">{{ entity.category.name }}</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>{{ entity.tool }}</h2>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('work') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>
-        <a href="{{ path('work_edit', { 'id': entity.id }) }}">
-            Edit
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+    <div class="container">
+
+        <div class="portfolio-title">
+            <div class="row">
+                <div class="portfolio-nav-all col-md-1">
+                    <a href="{{ path('work') }}" rel="tooltip" data-original-title="Retour à la liste"><i class="icon icon-th"></i></a>
+                </div>
+                <div class="col-md-10 center">
+                    <h2 class="shorter">{{ entity.name }}</h2>
+                </div>
+                <div class="portfolio-nav col-md-1">
+                    {% set previous = entity.id - 1 %}
+                    <a href="{{ path('work_show', { 'id': previous }) }}" class="portfolio-nav-prev" rel="tooltip" data-original-title="Previous"><i class="icon icon-chevron-left"></i></a>
+                    {% set next = entity.id + 1 %}
+                    <a href="{{ path('work_show', { 'id': next }) }}" class="portfolio-nav-next" rel="tooltip" data-original-title="Next"><i class="icon icon-chevron-right"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <hr class="tall">
+
+        <div class="row">
+            <div class="col-md-4">
+
+                <div class="owl-carousel" data-plugin-options='{"items": 1, "autoHeight": true}'>
+                    {% for photo in entity.photos %}
+                    <div>
+                        <div class="thumbnail">
+                            <img alt="" class="img-responsive" src="{{ asset('images/') }}/{{ photo }}">
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+            </div>
+
+            <div class="col-md-8">
+
+                <div class="portfolio-info">
+                    <div class="row">
+                        <div class="col-md-12 center">
+                            <ul>
+                                <li>
+                                    <i class="icon icon-calendar"></i> {{ entity.dateCreation|date('d') }} {{ entity.dateCreation|date('M') }} {{ entity.dateCreation|date('Y') }}
+                                </li>
+                                <li>
+                                    <i class="icon icon-tags"></i> <a href="#">{{ entity.tool }}</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <h4><strong>Description</strong> du projet</h4>
+                {% if entity.shortDescription %}<p>{{ entity.shortDescription }}</p>{% endif %}
+                <p class="taller">{{ entity.description }}</p>
+
+                <a href="{{ entity.linkpreview }}" class="btn btn-primary btn-icon"><i class="icon icon-external-link"></i>Voir en ligne</a> <span class="arrow hlb" data-appear-animation="rotateInUpLeft" data-appear-animation-delay="800"></span>
+
+                <ul class="portfolio-details">
+                    <li>
+                        <p><strong>Compétences:</strong></p>
+
+                        <ul class="list list-skills icons list-unstyled list-inline">
+                            {% for tag in entity.tags %}
+                            <li><i class="icon icon-check-circle"></i> {{ tag }}</li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                    <li>
+                        <p><strong>Client:</strong></p>
+                        <p>{{ entity.client }}</p>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+        <hr class="tall" />
+
+        <div class="row">
+
+            <div class="col-md-12">
+                <h3>Projets <strong>associés</strong></h3>
+            </div>
+
+            <ul class="portfolio-list">
+                {% for entity in entityAssoc %}
+                <li class="col-md-3">
+                    <div class="portfolio-item thumbnail">
+                        <a href="{{ path('work_show', { 'id': entity.id }) }}" class="thumb-info">
+                            <img alt="" class="img-responsive" src="{{ asset('images/') }}{{ entity.thumbnail }}">
+                            <span class="thumb-info-title">
+                                <span class="thumb-info-inner">{{ entity.name }}</span>
+                                <span class="thumb-info-type">{{ entity.tool }}</span>
+                            </span>
+                            <span class="thumb-info-action">
+                                <span title="Universal" href="#" class="thumb-info-action-icon"><i class="icon icon-link"></i></span>
+                            </span>
+                        </a>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>
 {% endblock %}

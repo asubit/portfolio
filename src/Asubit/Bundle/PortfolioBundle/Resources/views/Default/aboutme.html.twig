@@ -1,5 +1,198 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-Hello !
+<div class="container">
+    <!-- Description -->
+    <div class="row">
+        <div class="col-md-4">
+
+            <div class="owl-carousel " data-plugin-options='{"items": 1, "transitionStyle": "fade"}'>
+                <div>
+                    <div class="thumbnail">
+                        <img alt="" height="300" class="img-responsive" src="{{ asset('images/photo-antoine-subit.jpg') }}">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-8">
+
+            <h2 class="shorter">Antoine <strong>Subit</strong></h2>
+            <h4>Analyste Programmeur</h4>
+
+            <span class="thumb-info-social-icons">
+                <a rel="tooltip" data-placement="bottom" target="_blank" href="http://www.facebook.com" data-original-title="Facebook"><i class="icon icon-facebook"></i><span>Facebook</span></a>
+                <a rel="tooltip" data-placement="bottom" href="https://plus.google.com/105793995123601856151/posts" data-original-title="Google +"><i class="icon icon-google-plus"></i><span>Google +</span></a>
+                <a rel="tooltip" data-placement="bottom" href="http://www.linkedin.com" data-original-title="Linkedin"><i class="icon icon-linkedin"></i><span>Linkedin</span></a>
+            </span>
+
+            <p>Passionné d'informatique, de voyage et par la moto je maitrise l'anglais et j'ai qualques bases de chinois. Je habite actuellement à Lyon depuis deux années. Je suis à votre disposition par mail <a href="mailto:antoine@subit.fr">antoine@subit.fr</a> pour tous renseignements ou commentaires sur mon portfolio.</p>
+
+            <ul class="list icons list-unstyled">
+                <li><i class="icon icon-check"></i> Toujours allé plus loin dans la technicité.</li>
+                <li><i class="icon icon-check"></i> La motivation est la clé de tout.</li>
+                <li><i class="icon icon-check"></i> Mon métier est ma passion.</li>
+            </ul>
+
+        </div>
+    </div>
+
+    <hr class="tall" />
+
+    <!-- Expériences professionnelles -->
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="push-top">Expérience <strong>Professionnelle</strong></h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <ul class="history">
+                <li data-appear-animation="fadeInUp">
+                    <div class="thumb">
+                        <img src="{{ asset('images/econocom-osiatis.jpg') }}" alt="" />
+                    </div>
+                    <div class="featured-box">
+                        <div class="box-content">
+                            <h4><strong>2014</strong></h4>
+                            <p><span class="alternative-font">Econocom Osiatis</span> Conception technique de web application et architecture de base de données pour des besoins spécifiques. Développement sous Symfony 2 et Zend Framework 1.</p>
+                        </div>
+                    </div>
+                </li>
+                <li data-appear-animation="fadeInUp">
+                    <div class="thumb">
+                        <img src="{{ asset('images/ascomedia.jpg') }}" alt="" />
+                    </div>
+                    <div class="featured-box">
+                        <div class="box-content">
+                            <h4><strong>2013</strong></h4>
+                            <p><span class="alternative-font">Ascomédia</span> Développement de web application spécifique dans le domaine de l'immobilier sous Symfony 2. Gestion relationnel client et gestion de projet. Tests unitaires et fonctionnels. Mise en production et administration système.</p>
+                        </div>
+                    </div>
+                </li>
+                <li data-appear-animation="fadeInUp">
+                    <div class="thumb">
+                        <img src="{{ asset('images/promoplus.png') }}" alt="" />
+                    </div>
+                    <div class="featured-box">
+                        <div class="box-content">
+                            <h4><strong>2012</strong></h4>
+                            <p><span class="alternative-font">Promoplus</span> Developpeur SEO dans le cadre d'un stage. Plan de campagne de référencement naturel. Optimisation site existant, Net-linking, Plan stratégique à moyen therme, veille concurentielle, cocon sémantique, SEM.</p>
+                        </div>
+                    </div>
+                </li>
+                <li data-appear-animation="fadeInUp">
+                    <div class="thumb">
+                        <img src="{{ asset('images/photo-antoine-subit.jpg') }}" alt="" />
+                    </div>
+                    <div class="featured-box">
+                        <div class="box-content">
+                            <h4><strong>2011</strong></h4>
+                            <p><span class="alternative-font">Free-lance</span> Création de sites internet sur Wordpress et E-commerce sur Prestashop.  Création de visuels pour support print.</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+    <!-- Compétences -->
+    <div class="row">
+        <div class="col-md-5">
+            <h2>Mes<strong>Compétences</strong></h2>
+            <p>Grâce à mon parcours professionnel et ma curiosité j'ai pu acquérir de nombreuses compétences dans le domaine du développement, de la conception, de l'intégration et du graphisme. Des logiciels de PAO aux langagues informatiques tel que PHP ou MySQL je maitrise les outils que j'utilise et les exploitent toujours au maximum pour tire meilleur parti de mes compétences en toutes situations.</p>
+        </div>
+        <div class="col-md-7">
+            <div class="progress-bars">
+                <div class="progress-label">
+                    <span>HTML/CSS</span>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-primary" data-appear-progress-animation="100%">
+                        <span class="progress-bar-tooltip">100%</span>
+                    </div>
+                </div>
+                <div class="progress-label">
+                    <span>PHP/MySQL</span>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-primary" data-appear-progress-animation="85%" data-appear-animation-delay="300">
+                        <span class="progress-bar-tooltip">95%</span>
+                    </div>
+                </div>
+                <div class="progress-label">
+                    <span>Symfony2</span>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-primary" data-appear-progress-animation="75%" data-appear-animation-delay="600">
+                        <span class="progress-bar-tooltip">75%</span>
+                    </div>
+                </div>
+                <div class="progress-label">
+                    <span>Responsive Design</span>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-primary" data-appear-progress-animation="85%" data-appear-animation-delay="900">
+                        <span class="progress-bar-tooltip">85%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="tall" />
+
+    <!-- Formations scolaires -->
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="push-top">Ma <strong>Formation</strong></h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <ul class="history">
+                <li data-appear-animation="fadeInUp">
+                    <div class="thumb">
+                        <img src="{{ asset('images/logo-autoformation.jpg') }}" alt="" />
+                    </div>
+                    <div class="featured-box">
+                        <div class="box-content">
+                            <h4><strong>2010<br>2013</strong></h4>
+                            <p><span class="alternative-font">Auto-formation</span> Formation et apprentissage en auto-didacte. Référencement naturel, HTML 5, CSS 3, Wordpress, Prestashop, Responsive design.</p>
+                        </div>
+                    </div>
+                </li>
+                <li data-appear-animation="fadeInUp">
+                    <div class="thumb">
+                        <img src="{{ asset('images/colibre.png') }}" alt="" />
+                    </div>
+                    <div class="featured-box">
+                        <div class="box-content">
+                            <h4><strong>2011<br>2012</strong></h4>
+                            <p>Licence professionnelle Communication Logiciels Libres et Sources Ouvertes <span class="alternative-font">CoLibre</span> Université de Lyon 2. Infographie, Community Management, Web rédactionnel (<a href="http://colibre.org/">Blog de CoLibre</a>).</p>
+                        </div>
+                    </div>
+                </li>
+                <li data-appear-animation="fadeInUp">
+                    <div class="thumb">
+                        <img src="{{ asset('images/logos_IUT-2011.jpg') }}" alt="" />
+                    </div>
+                    <div class="featured-box">
+                        <div class="box-content">
+                            <h4><strong>2009<br>2011</strong></h4>
+                            <p>DUT <span class="alternative-font">Services et Réseaux de Communication</span> UNIVERSITÉ CLERMONT 1 – Antenne du Puy-en-Velay. Web développement, Web design, Gestion de projet, Communication, Graphisme, Vidéo, C2I → Certificat Informatique et Internet.</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</div>
 {% endblock %}

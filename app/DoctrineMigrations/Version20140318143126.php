@@ -14,15 +14,15 @@ class Version20140318143126 extends AbstractMigration
     {
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() != "mysql", "Migration can only be executed safely on 'mysql'.");
-        
-        $this->addSql("ALTER TABLE work ADD tool VARCHAR(255) DEFAULT NULL");
+
+        $this->addSql("ALTER TABLE Work ADD tool VARCHAR(255) DEFAULT NULL");
     }
 
     public function down(Schema $schema)
     {
         // this down() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() != "mysql", "Migration can only be executed safely on 'mysql'.");
-        
+
         $this->addSql("ALTER TABLE Work DROP tool");
     }
 }

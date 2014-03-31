@@ -114,6 +114,10 @@ class WorkController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('AsubitPortfolioBundle:Work')->find($id);
+        $entityCategory = $entity->getCategory();
+        $entityTool = $entity->getTool();
+        $entityAssoc = $em->getRepository('AsubitPortfolioBundle:Work')->findByTool($entityTool);
+        //$entityAssoc = $em->getRepository('AsubitPortfolioBundle:Work')->findByCategory($entityCategory);
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Work entity.');
@@ -123,6 +127,7 @@ class WorkController extends Controller
 
         return array(
             'entity'      => $entity,
+            'entityAssoc' => $entityAssoc,
             'delete_form' => $deleteForm->createView(),
         );
     }

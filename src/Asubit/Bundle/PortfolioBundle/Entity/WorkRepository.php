@@ -12,4 +12,21 @@ use Doctrine\ORM\EntityRepository;
  */
 class WorkRepository extends EntityRepository
 {
+    public function findByCategory($category){
+        $query = $this->getEntityManager()
+                    ->createQuery("
+                        SELECT w FROM AsubitPortfolioBundle:Work w
+                        WHERE w.category = :category"
+                    )->setParameter('category', $category);
+        return $query->getResult();
+    }
+
+    public function findByTool($tool){
+        $query = $this->getEntityManager()
+                    ->createQuery("
+                        SELECT w FROM AsubitPortfolioBundle:Work w
+                        WHERE w.tool = :tool"
+                    )->setParameter('tool', $tool)->setMaxResults(4);
+        return $query->getResult();
+    }
 }

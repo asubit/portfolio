@@ -124,8 +124,8 @@ class LoadApplicationData extends AbstractFixture implements FixtureInterface, C
             ->setClient("Association des Amis de l'École Publique, Association de la Tour de Salvagny, 69")
             ->setTool('Wordpress')
             ->setTags(array('PHP','MySQL','HTML','CSS'))
-            ->setPhotos(array('wordpress/aaep-mini.png'))
-            ->setThumbnail('wordpress/aaep-mini.png')
+            ->setPhotos(array('wordpress/aaep-mini.PNG'))
+            ->setThumbnail('wordpress/aaep-mini.PNG')
             ->setLinkpreview('http://www.aaeplatour.org');
         $manager->persist($w);
         $w = new Work();
@@ -137,8 +137,8 @@ class LoadApplicationData extends AbstractFixture implements FixtureInterface, C
             ->setClient("L'Objectif Feuillantin, Club photo de La Fouillouse, 42")
             ->setTool('Wordpress')
             ->setTags(array('PHP','MySQL','HTML','CSS'))
-            ->setPhotos(array('wordpress/lof-mini.png'))
-            ->setThumbnail('wordpress/lof-mini.png')
+            ->setPhotos(array('wordpress/lof-mini.PNG'))
+            ->setThumbnail('wordpress/lof-mini.PNG')
             ->setLinkpreview('http://objectif-feuillantin.fr');
         $manager->persist($w);
         $w = new Work();
@@ -150,8 +150,8 @@ class LoadApplicationData extends AbstractFixture implements FixtureInterface, C
             ->setClient('Mairie de Périgneux, Administration Publique Française, 42')
             ->setTool('Wordpress')
             ->setTags(array('PHP','MySQL','HTML','CSS'))
-            ->setPhotos(array('wordpress/perigneux-mini.png'))
-            ->setThumbnail('wordpress/perigneux-mini.png')
+            ->setPhotos(array('wordpress/perigneux-mini.PNG'))
+            ->setThumbnail('wordpress/perigneux-mini.PNG')
             ->setLinkpreview('http://www.perigneux.fr');
         $manager->persist($w);
         $w = new Work();
@@ -163,8 +163,8 @@ class LoadApplicationData extends AbstractFixture implements FixtureInterface, C
             ->setClient('PARACOR Rhône-Alpes, Association de Lyon, 69')
             ->setTool('Wordpress')
             ->setTags(array('PHP','MySQL','HTML','CSS'))
-            ->setPhotos(array('wordpress/paracor-mini.png'))
-            ->setThumbnail('wordpress/paracor-mini.png')
+            ->setPhotos(array('wordpress/aaep-mini.PNG'))
+            ->setThumbnail('wordpress/aaep-mini.PNG')
             ->setLinkpreview('http://www.paracor-rhonealpes.fr');
         $manager->persist($w);
         $w = new Work();
@@ -176,8 +176,8 @@ class LoadApplicationData extends AbstractFixture implements FixtureInterface, C
             ->setClient('Opération Pamplemousses, Association scolaire, National')
             ->setTool('Wordpress')
             ->setTags(array('PHP','MySQL','HTML','CSS'))
-            ->setPhotos(array('wordpress/op-mini.png'))
-            ->setThumbnail('wordpress/op-mini.png')
+            ->setPhotos(array('wordpress/op-mini.PNG'))
+            ->setThumbnail('wordpress/op-mini.PNG')
             ->setLinkpreview('http://www.operation-pamplemousses.com');
         $manager->persist($w);
         $w = new Work();
@@ -189,8 +189,8 @@ class LoadApplicationData extends AbstractFixture implements FixtureInterface, C
             ->setClient('IMV Production, Société individuelle, 69')
             ->setTool('Wordpress')
             ->setTags(array('PHP','MySQL','HTML','CSS'))
-            ->setPhotos(array('wordpress/imv-prod-mini.png'))
-            ->setThumbnail('wordpress/imv-prod-mini.png')
+            ->setPhotos(array('wordpress/imv-prod-mini.PNG'))
+            ->setThumbnail('wordpress/imv-prod-mini.PNG')
             ->setLinkpreview('http://www.imv-production.com');
         $manager->persist($w);
         $w = new Work();
@@ -202,8 +202,8 @@ class LoadApplicationData extends AbstractFixture implements FixtureInterface, C
             ->setClient('WebCréateur, Blog personnel')
             ->setTool('Wordpress')
             ->setTags(array('PHP','MySQL','HTML','CSS'))
-            ->setPhotos(array('wordpress/webcreateur-mini.png'))
-            ->setThumbnail('wordpress/webcreateur-mini.png')
+            ->setPhotos(array('wordpress/webcreateur-mini.PNG'))
+            ->setThumbnail('wordpress/webcreateur-mini.PNG')
             ->setLinkpreview('http://webcreateur.net');
         $manager->persist($w);
         $w = new Work();
@@ -215,8 +215,8 @@ class LoadApplicationData extends AbstractFixture implements FixtureInterface, C
             ->setClient("Projet d'étude")
             ->setTool('Drupal')
             ->setTags(array('HTML','CSS'))
-            ->setPhotos(array('drupal/rekup-mini.png'))
-            ->setThumbnail('drupal/rekup-mini.png')
+            ->setPhotos(array('drupal/rekup-mini.PNG'))
+            ->setThumbnail('drupal/rekup-mini.PNG')
             ->setLinkpreview('http://michele-ledee.fr/rekup-et-remoi');
         $manager->persist($w);
         // PRINT ET PAO
