@@ -29,16 +29,20 @@
         <div class="row">
             <div class="col-md-6">
 
+                {% for flashMessage in app.session.flashbag.get('success') %}
                 <div class="alert alert-success hidden" id="contactSuccess">
-                    <strong>Success!</strong> Your message has been sent to us.
+                    <strong>Succès!</strong> {{ flashMessage }}.
                 </div>
+                {% endfor %}
 
+                {% for flashMessage in app.session.flashbag.get('error') %}
                 <div class="alert alert-danger hidden" id="contactError">
-                    <strong>Error!</strong> There was an error sending your message.
+                    <strong>Erreur!</strong> {{ flashMessage }}.
                 </div>
+                {% endfor %}
 
                 <h2 class="short"><strong>Contactez</strong> Moi</h2>
-                <form action="php/contact-form.php" id="contactForm" type="post">
+                <form action="{{ path('contact_envoi') }}" id="contactForm" type="post">
                     <div class="row">
                         <div class="form-group">
                             <div class="col-md-6">
@@ -77,8 +81,9 @@
             <div class="col-md-6">
 
                 <h4 class="push-top">En savoir <strong>plus</strong></h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget leo at velit imperdiet varius. In eu ipsum vitae velit congue iaculis vitae at risus.</p>
-
+                <p>
+                    Actuellement en poste mais toujours à l'écoute d'opportunité je suis diponible directement par mail au par le formulaire de contact si présent.<br>
+                    Pour toutes remarques, commentaires ou renseignement complémentaire pour pouvez également me joindre par téléphone.</p>
                 <hr />
 
                 <h4>Mes <strong>Coordonnées</strong></h4>
@@ -90,12 +95,17 @@
 
                 <hr />
 
-                <h4>Disponibilité de <strong>réponse</strong></h4>
+                <h4>Rejoingnez <strong>mon réseau</strong></h4>
                 <ul class="list-unstyled">
-                    <li><i class="icon icon-time"></i> Lundi - Vendredi : Mail ou formulaire de contact</li>
-                    <li><i class="icon icon-time"></i> Samedi : Téléphone</li>
-                    <li><i class="icon icon-time"></i> Dimanche : Sieste</li>
+                    <li><i class="icon icon-stack-overflow"></i> <a href="http://stackoverflow.com/users/2790959/antoinesubit">Stack Overflow</a></li>
+                    <li><i class="icon icon-google-plus-square"></i> <a href="https://plus.google.com/u/0/+AntoineSubit/posts">Google +</a></li>
+                    <li><i class="icon icon-github-square"></i> <a href="https://github.com/asubit">GitHub</a></li>
+                    <li><i class="icon icon-linkedin-square"></i> <a href="fr.linkedin.com/pub/antoine-subit/45/336/872/">LinkedIn</a></li>
                 </ul>
+                {% if name is defined %}{{ name }}<br>{% endif %}
+                {% if email is defined %}{{ email }}<br>{% endif %}
+                {% if message is defined %}{{ message }}<br>{% endif %}
+                {% if subject is defined %}{{ subject }}{% endif %}
 
             </div>
 

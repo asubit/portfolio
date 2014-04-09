@@ -7,6 +7,11 @@ aboutme:
 contact:
     pattern:  /contact
     defaults: { _controller: AsubitPortfolioBundle:Default:contact }
+    methods:  [GET]
+contact_envoi:
+    pattern:  /contact
+    defaults: { _controller: AsubitPortfolioBundle:Default:contactEnvoi }
+    methods:  [POST]
 
 work:
     pattern:  /portfolio
